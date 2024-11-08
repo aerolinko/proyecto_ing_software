@@ -6,3 +6,53 @@ Body{
     padding: 10px;
     box-sizing: border-box;
 }
+
+input {
+    display: block;
+    margin: 20px auto;
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+}
+
+button {
+padding: 10px 100px;
+background-color: #42b983;
+color: white;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+}
+
+h2 {
+    color: #000000;
+    text-align: center;
+}
+li{
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    width: 50%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+button:hover {
+background-color: #369f6e;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div {
+margin-bottom: 10px;
+}
+label {
+margin-right: 10px;
+}
+
+form button{
+position: relative;
+}
