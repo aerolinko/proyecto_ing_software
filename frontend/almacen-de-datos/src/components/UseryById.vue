@@ -47,14 +47,3 @@ export default {
 };
 </script>
 
-<style>
-input {
-    display: block;
-    margin: 20px auto;
-}
-button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-}
-</style>

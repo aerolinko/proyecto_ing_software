@@ -21,17 +21,3 @@ export default {
 };
 </script>
 
-<style>
-h2 {
-    color: #000000;
-    text-align: center;
-}
-li{
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 50px;
-    width: 50%;
-    margin: 10px auto;
-    text-align: center;
-}
-</style>

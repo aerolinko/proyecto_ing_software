@@ -49,34 +49,3 @@ export default {
 };
 </script>
 
-<style>
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-div {
-margin-bottom: 10px;
-}
-label {
-margin-right: 10px;
-}
-input {
-padding: 5px;
-border-radius: 50px;
-border: 1px solid #ccc;
-}
-button {
-padding: 10px 20px;
-margin-left:10px;
-background-color: #42b983;
-color: white;
-border: none;
-border-radius: 50px;
-cursor: pointer;
-}
-button:hover {
-background-color: #369f6e;
-}
-</style>
