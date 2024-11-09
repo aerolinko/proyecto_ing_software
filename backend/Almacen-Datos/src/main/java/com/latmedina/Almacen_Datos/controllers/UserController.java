@@ -34,11 +34,11 @@ public class UserController {
         return this.userService.getById(id);
     }
 
-    @GetMapping(path = "/{password}/{username}")
-    public Optional<UserModel> getUserByUsername(@PathVariable("username") String username, @PathVariable("password") String password) throws Exception{
-        if(userService.findUserByUsername(username).isPresent()) {
-            if (userService.findUserByUsername(username).get().getPassword().equals(password)) {
-                return this.userService.findUserByUsername(username);
+    @PostMapping(path="/login")
+    public Optional<UserModel> getUserByUsername(@RequestBody UserModel user) throws Exception {
+        if(userService.findUserByUsername(user.getUsername()).isPresent()) {
+            if (userService.findUserByUsername(user.getUsername()).get().getPassword().equals(user.getPassword())) {
+                return this.userService.findUserByUsername(user.getUsername());
             } else {
                 throw new Exception("error de acceso");
             }

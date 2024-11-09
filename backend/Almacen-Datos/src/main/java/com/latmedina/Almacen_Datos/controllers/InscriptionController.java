@@ -29,6 +29,11 @@ public class InscriptionController {
         return this.inscriptionService.getById(id);
     }
 
+    @GetMapping(path = "/owner/{user_id}")
+    public ArrayList<InscriptionModel> getInscriptionByUserId(@PathVariable("user_id") Long id){
+        return this.inscriptionService.getByUserId(id);
+    }
+
     @PutMapping(path = "/{id}")
     public InscriptionModel updateInscriptionById(@RequestBody InscriptionModel request, @PathVariable("id") Long id) {
         return this.inscriptionService.updateById(request, id);

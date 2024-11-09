@@ -12,6 +12,16 @@ public class ProductModel {
     private String product_name;
     @Column
     private String product_description;
+    @Column
+    private Long authorId;
+
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
+    }
 
     public Long getProduct_id() {
         return product_id;

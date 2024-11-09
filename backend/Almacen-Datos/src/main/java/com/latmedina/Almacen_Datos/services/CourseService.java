@@ -21,6 +21,11 @@ public class CourseService {
         return courseRepository.save(course);
     }
 
+    public ArrayList<CourseModel> getByAuthorId(Long author_id){
+        return courseRepository.findAllByAuthorId(author_id);
+    }
+
+
     public Optional<CourseModel> getById(Long id){
         return courseRepository.findById(id);
     }

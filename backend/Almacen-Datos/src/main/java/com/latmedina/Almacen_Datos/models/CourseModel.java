@@ -12,6 +12,16 @@ public class CourseModel {
     private String course_name;
     @Column
     private String course_description;
+    @Column
+    private Long authorId;
+
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Long author_id) {
+        this.authorId = author_id;
+    }
 
     public Long getCourse_id() {
         return course_id;
