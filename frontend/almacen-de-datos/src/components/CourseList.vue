@@ -1,6 +1,6 @@
 <template>
     <div>
-    <h2>Lista de Cursos</h2>
+    <h2>Tus Cursos</h2>
     <ul>
         <li v-for="course in courses" :key="course.course_id">
         id -> {{course.course_id}} - {{ course.course_name }} - {{ course.course_description }}

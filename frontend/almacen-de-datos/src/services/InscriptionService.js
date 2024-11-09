@@ -11,6 +11,10 @@ class InscriptionService {
         return axios.get(`${API_URL}/${id}`);
     }
 
+    getInscriptionByUserId(id) {
+            return axios.get(`${API_URL}/owner/${id}`);
+    }
+
     saveInscription(inscription) {
         return axios.post(API_URL, inscription);
     }

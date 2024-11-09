@@ -2,7 +2,7 @@
     <form @submit.prevent="handleSubmit">
     <h2> Crear Productos</h2>
     <div>
-        <label for="profuct-name">Nombre del producto:</label>
+        <label for="product-name">Nombre del producto:</label>
         <input type="text" v-model="product.product_name" id="product-name" required>
     </div>
     <div>
@@ -22,7 +22,8 @@ export default {
     return {
         product: {
         product_name: '',
-        product_description: ''
+        product_description: '',
+        authorId: JSON.parse(sessionStorage.getItem('user')).id
         }
     };
     },

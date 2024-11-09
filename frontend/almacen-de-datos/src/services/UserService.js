@@ -11,8 +11,8 @@ class UserService {
         return axios.get(`${API_URL}/${id}`);
     }
 
-    getUserByUsername(username,password) {
-            return axios.get(`${API_URL}/${password}/${username}`);
+    getUserByUsername(user) {
+            return axios.post(API_URL+'/login',user);
         }
 
     saveUser(user) {
