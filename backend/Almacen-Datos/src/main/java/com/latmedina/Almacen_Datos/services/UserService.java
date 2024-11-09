@@ -17,6 +17,10 @@ public class UserService {
         return (ArrayList<UserModel>) userRepository.findAll();
     }
 
+    public Optional<UserModel> findUserByUsername(String username){
+        return userRepository.findByUsername(username);
+    }
+
     public UserModel saveUser(UserModel user){
         return userRepository.save(user);
     }
