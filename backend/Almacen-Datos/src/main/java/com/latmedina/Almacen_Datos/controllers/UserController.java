@@ -2,9 +2,14 @@ package com.latmedina.Almacen_Datos.controllers;
 
 import com.latmedina.Almacen_Datos.models.UserModel;
 import com.latmedina.Almacen_Datos.services.UserService;
+import org.antlr.v4.runtime.Token;
+import org.hibernate.boot.model.CustomSql;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.oauth2.server.servlet.OAuth2AuthorizationServerJwtAutoConfiguration;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -29,6 +34,21 @@ public class UserController {
         return this.userService.getById(id);
     }
 
+    @GetMapping(path = "/{password}/{username}")
+    public Optional<UserModel> getUserByUsername(@PathVariable("username") String username, @PathVariable("password") String password) throws Exception{
+        if(userService.findUserByUsername(username).isPresent()) {
+            if (userService.findUserByUsername(username).get().getPassword().equals(password)) {
+                return this.userService.findUserByUsername(username);
+            } else {
+                throw new Exception("error de acceso");
+            }
+        }
+        else{
+        throw new Exception("error de existencia");
+        }
+    }
+
+
     @PutMapping(path = "/{id}")
     public UserModel updateUserById(@RequestBody UserModel request, @PathVariable("id") Long id){
         return this.userService.updateById(request, id);
@@ -44,4 +64,6 @@ public class UserController {
             return "User with id " + id + " not deleted User";
         }
     }
+
+
 }
