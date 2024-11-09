@@ -13,6 +13,14 @@
         <label for="email">Email:</label>
         <input type="email" v-model="user.email" id="email" required>
     </div>
+    <div>
+        <label for="email">username:</label>
+        <input type="text" v-model="user.username" id="username" required>
+    </div>
+    <div>
+        <label for="email">password:</label>
+        <input type="password" v-model="user.password" id="password" required>
+    </div>
     <button type="submit">Crear Usuario</button>
     </form>
 </template>
@@ -27,13 +35,15 @@ export default {
         user: {
         firstName: '',
         lastName: '',
-        email: ''
+        email: '',
+        username: '',
+        password: '',
         }
     };
     },
     methods: {
     resetForm() {
-        this.user = { firstName: '', lastName: '', email: '' };
+        this.user = { firstName: '', lastName: '', email: '', username: '', password: '' };
     },
     async handleSubmit() {
         try {
