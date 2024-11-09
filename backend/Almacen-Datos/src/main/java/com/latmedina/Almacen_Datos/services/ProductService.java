@@ -17,6 +17,11 @@ public class ProductService {
         return (ArrayList<ProductModel>) productRepository.findAll();
     }
 
+    public ArrayList<ProductModel> getProductsAllByAuthorId(Long author_id){
+        return productRepository.findAllByAuthorId(author_id);
+    }
+
+
     public ProductModel saveProduct(ProductModel product){
         return productRepository.save(product);
     }

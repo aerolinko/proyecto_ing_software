@@ -25,12 +25,16 @@ public class InscriptionService {
         return inscriptionRepository.findById(id);
     }
 
+    public ArrayList<InscriptionModel> getByUserId(Long id){
+        return inscriptionRepository.findAllByUserId(id);
+    }
+
     public InscriptionModel updateById(InscriptionModel request, Long id){
         InscriptionModel inscription = inscriptionRepository.findById(id).get();
 
         inscription.setCourse_id(request.getCourse_id());
         inscription.setInscription_id(request.getInscription_id());
-        inscription.setUser_id(request.getUser_id());
+        inscription.setUserId(request.getUserId());
         return inscriptionRepository.save(inscription); // Save the updated user
     }
 

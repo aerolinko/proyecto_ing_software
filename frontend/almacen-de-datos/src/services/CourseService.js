@@ -11,6 +11,10 @@ class CourseService {
         return axios.get(`${API_URL}/${id}`);
     }
 
+    getCourseByAuthorId(author_id) {
+            return axios.get(`${API_URL}/author/${author_id}`);
+    }
+
     saveCourse(course) {
         return axios.post(API_URL, course);
     }

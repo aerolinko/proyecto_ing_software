@@ -22,7 +22,8 @@ export default {
     return {
         course: {
         course_name: '',
-        course_description: ''
+        course_description: '',
+        authorId: JSON.parse(sessionStorage.getItem('user')).id
         }
     };
     },

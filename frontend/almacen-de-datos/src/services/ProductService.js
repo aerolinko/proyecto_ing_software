@@ -11,6 +11,10 @@ class ProductService {
         return axios.get(`${API_URL}/${id}`);
     }
 
+     getProductByAuthorId(author_id) {
+            return axios.get(`${API_URL}/author/${author_id}`);
+     }
+
     saveProduct(product) {
         return axios.post(API_URL, product);
     }

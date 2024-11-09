@@ -9,16 +9,27 @@ public class InscriptionModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long inscription_id;
     @Column
-    private Long user_id;
+    private Long userId;
     @Column
     private Long course_id;
 
-    public Long getUser_id() {
-        return user_id;
+    public String getCourse_name() {
+        return course_name;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setCourse_name(String course_name) {
+        this.course_name = course_name;
+    }
+
+    @Column
+    private String course_name;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Long getInscription_id() {

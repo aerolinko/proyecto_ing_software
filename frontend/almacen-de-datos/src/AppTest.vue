@@ -3,43 +3,48 @@
     <form @submit.prevent="handleSubmit">
         <h2> Log in</h2>
         <div>
-            <label for="user-username">Nombre de usuario:</label>
-            <input type="text"  v-model="username" id="user-username" required>
+            <label for="username">Nombre de usuario:</label>
+            <input type="text"  v-model="user.username" id="username" required>
         </div>
         <div>
-            <label for="user-password">contrasena:</label>
-            <input type="password" v-model="password" id="user-password" required>
+            <label for="password">contrasena:</label>
+            <input type="password" v-model="user.password" id="password" required>
         </div>
 
         <button type="submit">Log in</button>
         <div>
     </div>
         <div v-if="errorMessage">{{ errorMessage }}</div>
+        <a href="/index.html">Registrarse</a>
         </form>
     </div>
 </template>
 <script>
-import UserService from '@/services/UserService';
 import axios from 'axios';
+import UserService from '@/services/UserService';
 
 export default {
     data(){
     return{
-          user: '',
+          user: {
+          firstName: '',
+          lastName: '',
+          email: '',
           username: '',
           password: '',
+          },
           errorMessage: '',
         };
     },
     methods: {
     async handleSubmit() {
         try {
-        const response = await UserService.getUserByUsername(this.username,this.password);
-        this.user = response.data;
-        window.location.href = "/index.html";
+        const response = await UserService.getUserByUsername(this.user);
+        this.user=response.data;
+        delete this.user.password;
+        sessionStorage.setItem('user',JSON.stringify(this.user));
+        window.location.href='/profile.html';
         } catch (error) {
-          this.user = null; // Limpiar el usuario si hay un error
-          this.password = null;
         this.errorMessage = 'Usuario o contrasena equivocados';
         console.error('Error fetching user by password', error);
         }

@@ -24,6 +24,11 @@ public class ProductController {
         return this.productService.saveProduct(product);
     }
 
+    @GetMapping(path = "/author/{author_id}")
+    public ArrayList<ProductModel> getProductByAuthorId(@PathVariable("author_id") Long author_id){
+        return this.productService.getProductsAllByAuthorId(author_id);
+    }
+
     @GetMapping(path = "/{id}")
     public Optional<ProductModel> getProductById(@PathVariable("id") Long id) {
         return this.productService.getById(id);
