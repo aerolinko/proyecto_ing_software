@@ -9,10 +9,19 @@ Body{
 
 input {
     display: block;
-    margin: 20px auto;
+    margin: 5px !important;
     padding: 5px;
     border-radius: 50px;
     border: 1px solid #ccc;
+}
+
+li{
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    width: 50%;
+    margin: 10px auto;
+    text-align:  center;
 }
 
 button {
@@ -28,8 +37,16 @@ li .nav-link{
 background-color: #DAD5E2;
 color: black !important;
 border: none;
-border-radius: 50px;
+border-radius: 10px !important;
 cursor: pointer;
+}
+
+.nav-item{
+    padding: 0px;
+    border: 0px solid #ccc;
+    border-radius: 50px;
+    width: auto;
+    text-align:  center;
 }
 
 .card-header-tabs .nav-link.active{
