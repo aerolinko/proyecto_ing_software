@@ -81,6 +81,13 @@ button:hover {
 background-color: #369f6e;
 }
 
+button:disabled {
+background-color: gray;
+cursor: default;
+}
+
+
+
 form {
     display: flex;
     flex-direction: column;
@@ -89,10 +96,33 @@ form {
 div {
 margin-bottom: 10px;
 }
-label {
-margin-right: 10px;
+div label {
+display:flex;
 }
 
 form button{
 position: relative;
+}
+
+textarea{
+resize: none !important;
+display: flex;
+}
+
+.schedule {
+align-items: center;
+display:flex;
+flex-flow:column;
+}
+
+#weekdays{
+display:flex;
+}
+
+#all-days{
+display:flex;
+}
+
+#days-label{
+font-size:calc(1.3rem + 0.3vw);
 }

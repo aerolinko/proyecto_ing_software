@@ -3,11 +3,11 @@
     <h2> Crear Productos</h2>
     <div>
         <label for="product-name">Nombre del producto:</label>
-        <input type="text" v-model="product.product_name" id="product-name" required>
+        <input maxlength="25" type="text" v-model="product.product_name" id="product-name" required>
     </div>
     <div>
         <label for="description">Descripcion del producto:</label>
-        <input type="text" v-model="product.product_description" id="description" required>
+        <textarea v-model="product.product_description" id="description" rows="6" cols="42" maxlength="255" required></textarea>
     </div>
     <button type="submit">Crear Producto</button>
     </form>

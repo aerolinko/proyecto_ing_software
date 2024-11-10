@@ -3,14 +3,32 @@
     <h2> Crear Curso</h2>
     <div>
         <label for="course-name">Nombre del curso:</label>
-        <input type="text" v-model="course.course_name" id="course-name" required>
+        <input type="text" v-model="course.course_name" id="course-name" maxlength="25" required>
     </div>
     <div>
         <label for="description">Descripcion del curso:</label>
-        <input type="text" v-model="course.course_description" id="description" required>
+        <textarea v-model="course.course_description" rows="6" cols="42" maxlength="255"  id="description" required></textarea>
     </div>
-    <button type="submit">Crear Curso</button>
-    </form>
+    <div v-for="(time_range) in course.time_ranges">
+    <h3 class="schedule">Horario</h3>
+        <div class="schedule">
+            <label for="start-time">Hora de inicio:</label>
+            <input type="time" v-model="time_range.start_time" required>
+        </div>
+        <div class="schedule">
+            <label for="end-time">Hora de fin:</label>
+            <input type="time" v-model="time_range.end_time" required>
+        </div>
+        <label id="days-label">Días de la semana:</label>
+        <div id="all-days">
+            <div v-for="day in daysOfWeek" :key="day" id="weekdays">
+                <input type="checkbox" :value="day" v-model="time_range.days">
+                <label>{{ day }}</label>
+            </div>
+        </div>
+   </div>
+   <button type="submit" :disabled="!isFormValid">Crear Curso</button>
+  </form>
 </template>
 
 <script>
@@ -23,13 +41,21 @@ export default {
         course: {
         course_name: '',
         course_description: '',
-        authorId: JSON.parse(sessionStorage.getItem('user')).id
-        }
+        authorId: JSON.parse(sessionStorage.getItem('user')).id,
+        time_ranges: [ { start_time: '', end_time: '', days: [] }
+          ]
+        },
+        daysOfWeek: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado','Domingo']
     };
     },
+    computed: {
+    isFormValid() {
+     return this.course.time_ranges.some(time_range => time_range.days.length > 0);
+     }
+   },
     methods: {
     resetForm() {
-        this.course = { course_name: '', course_description: ''};
+        this.course = { course_name: '', course_description: '', time_ranges:[]};
     },
     async handleSubmit() {
         try {
@@ -38,7 +64,7 @@ export default {
           this.$emit('courseCreated'); // Emitir un evento para informar que se ha creado un usuario
           this.resetForm(); // Limpiar el formulario
         } catch (error) {
-        console.error('There was an error creating the user!', error);
+        console.error('There was an error creating the course!', error);
         }
     }
     }
