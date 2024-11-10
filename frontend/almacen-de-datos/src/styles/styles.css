@@ -20,9 +20,22 @@ padding: 10px 100px;
 background-color: #42b983;
 color: white;
 border: none;
+border-radius: 50px !important;
+cursor: pointer;
+}
+
+li .nav-link{
+background-color: #DAD5E2;
+color: black !important;
+border: none;
 border-radius: 50px;
 cursor: pointer;
 }
+
+.card-header-tabs .nav-link.active{
+background-color: #42b983!important;
+}
+
 
 h2 {
     color: #000000;
@@ -35,14 +48,7 @@ a {
     text-align: center;
 }
 
-li{
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 50px;
-    width: 50%;
-    margin: 10px auto;
-    text-align:  center;
-}
+
 
 button:hover {
 background-color: #369f6e;
