@@ -5,12 +5,16 @@
     <h3>Mira todas las opciones que tienes tu disposición</h3>
 
     <div id="app">
-      <create-course @courseCreated="fetchCourses"></create-course>
-      <course-list :courses="courses"></course-list>
-      <create-inscription @inscriptionCreated="fetchInscriptions"></create-inscription>
-      <inscription-list :inscriptions="inscriptions"></inscription-list>
-      <create-product @productCreated="fetchProducts"></create-product>
-      <product-list :products="products"></product-list>
+    <b-card no-body>
+      <b-tabs pills card>
+      <b-tab title="Crear Curso"><create-course @courseCreated="fetchCourses"></create-course></b-tab>
+      <b-tab title="Mis Cursos"><course-list :courses="courses"></course-list></b-tab>
+      <b-tab title="Crear Inscripción"><create-inscription @inscriptionCreated="fetchInscriptions"></create-inscription></b-tab>
+      <b-tab title="Mis Inscripciones"><inscription-list :inscriptions="inscriptions"></inscription-list></b-tab>
+      <b-tab title="Crear Productos"><create-product @productCreated="fetchProducts"></create-product></b-tab>
+      <b-tab title="Mis Productos"><product-list :products="products"></product-list></b-tab>
+      </b-tabs>
+     </b-card>
     </div>
   </div>
 </template>
@@ -29,10 +33,12 @@ import axios from 'axios';
 import CourseService from '@/services/CourseService';
 import InscriptionService from '@/services/InscriptionService';
 import ProductService from '@/services/ProductService';
+import { BCard, BTabs, BTab } from 'bootstrap-vue-3';
 
 export default {
     name: 'App',
     components: {
+    BCard, BTabs, BTab,
      CreateCourse,
      CreateInscription,
      CourseList,
@@ -42,6 +48,7 @@ export default {
     },
   data() {
     return {
+      activeTab: 0,
       user: null,
       courses: [],
       inscriptions: [],
