@@ -1,0 +1,98 @@
+Body{
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+input {
+    display: block;
+    margin: 5px !important;
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+}
+
+li{
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    width: 35%;
+    margin: 10px 5px auto 5px;
+    text-align:  center;
+    display: flex;
+    flex: auto;
+}
+
+
+ul{
+    display:flex;
+    flex-wrap:wrap;
+    list-style:none;
+}
+
+button {
+padding: 10px 100px;
+background-color: #42b983;
+color: white;
+border: none;
+border-radius: 50px !important;
+cursor: pointer;
+}
+
+li .nav-link{
+background-color: #DAD5E2;
+color: black !important;
+border: none;
+border-radius: 10px !important;
+cursor: pointer;
+}
+
+.nav-item{
+    padding: 0px;
+    border: 0px solid #ccc;
+    border-radius: 50px;
+    margin: 5px;
+    width: auto;
+    text-align:  center;
+}
+
+.card-header-tabs .nav-link.active{
+background-color: #42b983!important;
+}
+
+
+h2 {
+    color: #000000;
+    text-align: center;
+}
+
+
+a {
+    color: #000000;
+    text-align: center;
+}
+
+
+
+button:hover {
+background-color: #369f6e;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div {
+margin-bottom: 10px;
+}
+label {
+margin-right: 10px;
+}
+
+form button{
+position: relative;
+}
