@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './components/UserProfile.vue'
+import App from './UserProfile.vue'
 import './styles/styles.css'
 import { BootstrapVue3 } from 'bootstrap-vue-3';
 import 'bootstrap/dist/css/bootstrap.css';

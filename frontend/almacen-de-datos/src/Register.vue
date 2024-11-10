@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <create-user @userCreated="fetchUsers"></create-user>
-    <a href="/testing.html" style="margin: 0 auto; display:block; text-align: center; padding: 20px 20px">Ya tengo una cuenta</a>
+    <a href="/index.html" style="margin: 0 auto; display:block; text-align: center; padding: 20px 20px">Ya tengo una cuenta</a>
     <user-list :users="users"></user-list>
   </div>
 </template>

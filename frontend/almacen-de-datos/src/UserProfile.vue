@@ -23,12 +23,12 @@
 
 <script>
 
-import CreateCourse from './CreateCourse.vue';
-import CreateInscription from './CreateInscription.vue';
-import CourseList from './CourseList.vue';
-import ProductList from './ProductList.vue';
-import InscriptionList from './InscriptionList.vue';
-import CreateProduct from './CreateProduct.vue';
+import CreateCourse from './components/CreateCourse.vue';
+import CreateInscription from './components/CreateInscription.vue';
+import CourseList from './components/CourseList.vue';
+import ProductList from './components/ProductList.vue';
+import InscriptionList from './components/InscriptionList.vue';
+import CreateProduct from './components/CreateProduct.vue';
 import axios from 'axios';
 import CourseService from '@/services/CourseService';
 import InscriptionService from '@/services/InscriptionService';

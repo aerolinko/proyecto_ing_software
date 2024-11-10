@@ -15,7 +15,7 @@
         <div>
     </div>
         <div v-if="errorMessage">{{ errorMessage }}</div>
-        <a href="/index.html">Registrarse</a>
+        <a href="/register.html">Registrarse</a>
         </form>
     </div>
 </template>
