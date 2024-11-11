@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.latmedina</groupId>
-	<artifactId>Almacen-Datos</artifactId>
+	<artifactId>Tallerelpunto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Almacen de Datos</name>
 	<description>Proyecto para gestionar el almacenamiento de datos</description>
@@ -28,6 +28,8 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<maven.compiler.source>23</maven.compiler.source>
+		<maven.compiler.target>23</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>

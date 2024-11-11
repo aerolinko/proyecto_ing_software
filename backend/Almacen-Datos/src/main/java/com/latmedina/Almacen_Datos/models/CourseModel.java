@@ -2,6 +2,8 @@ package com.latmedina.Almacen_Datos.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "cursos")
 public class CourseModel {
@@ -14,6 +16,17 @@ public class CourseModel {
     private String course_description;
     @Column
     private Long authorId;
+    @ElementCollection
+    @CollectionTable(name="course_time_ranges", joinColumns = @JoinColumn(name="course_id"))
+    private List<TimeRange> time_ranges;
+
+    public List<TimeRange> getTime_ranges() {
+        return time_ranges;
+    }
+
+    public void setTime_ranges(List<TimeRange> time_ranges) {
+        this.time_ranges = time_ranges;
+    }
 
     public Long getAuthorId() {
         return authorId;
@@ -46,4 +59,10 @@ public class CourseModel {
     public void setCourse_description(String course_description) {
         this.course_description = course_description;
     }
+
+
+
+
+
+
 }
