@@ -29,7 +29,9 @@ export default {
     },
     computed:{
         isFormValid(){
-            return this.selectedProducts === 1
+            return (
+                this.product.product_name.trim() !== ''&& this.product.product_description.trim() !== ''
+            );
         }
     },
     methods: {
