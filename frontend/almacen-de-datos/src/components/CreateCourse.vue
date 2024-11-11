@@ -59,8 +59,10 @@ export default {
     },
     async handleSubmit() {
         try {
+        console.log(this.course);
         const response = await axios.post('http://localhost:4000/api/course', this.course);
         console.log(response.data);
+        console.log(this.course.time_ranges); console.log(this.course.time_ranges[0].days); console.log(this.course.time_ranges[0].days[0].data);
           this.$emit('courseCreated'); // Emitir un evento para informar que se ha creado un usuario
           this.resetForm(); // Limpiar el formulario
         } catch (error) {

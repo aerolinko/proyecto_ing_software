@@ -69,7 +69,7 @@ export default {
           },
       async fetchInscriptions() {
             try {
-              const response = await InscriptionService.getInscriptionByUserId(JSON.parse(sessionStorage.getItem('user')).id    );
+              const response = await InscriptionService.getInscriptionByUserId(JSON.parse(sessionStorage.getItem('user')).id);
               this.inscriptions = response.data;
             } catch (error) {
               console.error('There was an error fetching the inscriptions!', error);
@@ -82,7 +82,7 @@ export default {
                 } catch (error) {
                   console.error('There was an error fetching the products!', error);
                 }
-              }
+              },
     },
     created() {
       this.fetchCourses();
