@@ -1,20 +1,20 @@
 <template>
     <div>
-    <h2>Cursos Disponibles</h2>
+    <h2>Selecciona un curso</h2>
     <ul>
         <li v-for="course in courses" :key="course.course_id">
         <input type="checkbox" :value="course.course_id" :checked="isSelected(course.course_id)" @change="toggleSelection(course.course_id)"/>
-        Curso: {{ course.course_name }}, Descripción: {{ course.course_description }}
+        <ul>Nombre: {{ course.course_name }}</ul>
+        <ul>Descripción: {{ course.course_description }}</ul>
         <ul class="dias-disp">
-            <li v-for="(time_range) in course.time_ranges">
-               <p>Hora Inicio: <br>{{ time_range.start_time }}</p>
-               <p>Hora Fin: <br>{{ time_range.end_time }}</p>
+            <li v-for="(time_range) in course.time_ranges" id="nulo">
+                Inicio: {{ time_range.start_time }}
+                Fin: {{ time_range.end_time }}
                         <ul>
-                            <li v-for="(day) in time_range.days"> {{ day }}
-                            </li>
+                            <li v-for="(day) in time_range.days"> {{ day }}</li>
                         </ul>
-                     </li>
-                 </ul>
+                    </li>
+                </ul>
         </li>
     </ul>
     </div>

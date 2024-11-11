@@ -1,20 +1,19 @@
 <template>
     <div>
-    <h2>Tus Cursos</h2>
+    <h2>Cursos</h2>
     <ul>
         <li v-for="course in courses" :key="course.course_id">
-        Curso: {{ course.course_name }}, Descripción: {{ course.course_description }}
-        <ul>
-            <li v-for="(time_range) in course.time_ranges">
-             <p>Hora Inicio: <br>{{ time_range.start_time }}</p>
-             <p>Hora Fin: <br>{{ time_range.end_time }}</p>
-                <ul>
-                    <li v-for="(day) in time_range.days"> {{ day }}
-                    </li>
-                </ul>
-             </li>
-         </ul>
-
+            <ul>Nombre: {{ course.course_name }}</ul>
+            <ul>Descripción: {{ course.course_description }}</ul>
+            <ul>
+                <li v-for="(time_range) in course.time_ranges" id="nulo">
+                    Inicio: {{ time_range.start_time }}
+                    Fin: {{ time_range.end_time }}
+                    <ul id="dias-container">
+                        <li v-for="(day) in time_range.days"> {{ day }}</li>
+                    </ul>
+                </li>
+            </ul>
         </li>
     </ul>
     </div>

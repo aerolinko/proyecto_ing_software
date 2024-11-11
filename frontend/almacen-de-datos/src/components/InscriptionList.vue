@@ -1,6 +1,5 @@
 <template>
     <div>
-    <h2>Tus Inscripciones</h2>
     <ul>
         <li v-for="inscription in inscriptions" :key="inscription.inscription_id">
         Estás inscrito en el curso: {{ inscription.course_name }}

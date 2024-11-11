@@ -1,24 +1,24 @@
 <template>
     <form @submit.prevent="handleSubmit">
-    <h2> Crear Usuario</h2>
+    <h2> Registrarse</h2>
     <div>
-        <label for="firstname">Nombre:</label>
+        <label for="firstname">Nombre</label>
         <input type="text" v-model="user.firstName" id="firstName" required>
     </div>
     <div>
-        <label for="lastname">Apellido:</label>
+        <label for="lastname">Apellido</label>
         <input type="text" v-model="user.lastName" id="lastName" required>
     </div>
     <div>
-        <label for="email">Email:</label>
+        <label for="email">Email</label>
         <input type="email" v-model="user.email" id="email" required>
     </div>
     <div>
-        <label for="email">username:</label>
+        <label for="email">Usuario</label>
         <input type="text" v-model="user.username" id="username" required>
     </div>
     <div>
-        <label for="email">password:</label>
+        <label for="email">Contrasena</label>
         <input type="password" v-model="user.password" id="password" required>
     </div>
     <button type="submit">Crear Usuario</button>

@@ -3,7 +3,8 @@
     <h2>Lista de Productos</h2>
     <ul>
         <li v-for="product in products" :key="product.product_id">
-        Producto: {{ product.product_name }}, Descripción: {{ product.product_description }}
+            <ul>Producto: {{ product.product_name }}</ul>
+            <ul>Descripción: {{ product.product_description }}</ul>
         </li>
     </ul>
     </div>

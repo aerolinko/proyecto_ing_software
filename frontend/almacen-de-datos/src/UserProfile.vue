@@ -1,18 +1,15 @@
 <template>
   <div v-if="user">
-    <h1>Bienvenido {{ user.firstName }}!</h1>
-    <h2 style="text-align:left">Este es tu propio perfil personalizado</h2>
-    <h3>Mira todas las opciones que tienes tu disposición</h3>
-
+    <h1 id="titulo"> BIENVENIDO {{ user.firstName.toUpperCase() }}!</h1>
     <div id="app">
     <b-card no-body>
       <b-tabs pills card>
       <b-tab title="Crear Curso"><create-course @courseCreated="fetchCourses"></create-course></b-tab>
-      <b-tab title="Mis Cursos"><course-list :courses="courses"></course-list></b-tab>
+      <b-tab title="Cursos"><course-list :courses="courses"></course-list></b-tab>
       <b-tab title="Crear Inscripción"><create-inscription @inscriptionCreated="fetchInscriptions"></create-inscription></b-tab>
-      <b-tab title="Mis Inscripciones"><inscription-list :inscriptions="inscriptions"></inscription-list></b-tab>
+      <b-tab title="Inscripciones"><inscription-list :inscriptions="inscriptions"></inscription-list></b-tab>
       <b-tab title="Crear Productos"><create-product @productCreated="fetchProducts"></create-product></b-tab>
-      <b-tab title="Mis Productos"><product-list :products="products"></product-list></b-tab>
+      <b-tab title="Productos"><product-list :products="products"></product-list></b-tab>
       </b-tabs>
      </b-card>
     </div>

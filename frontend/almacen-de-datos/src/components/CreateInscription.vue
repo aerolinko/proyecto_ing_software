@@ -1,6 +1,5 @@
 <template>
     <form @submit.prevent="handleSubmit">
-    <h2> Crear Inscripcion</h2>
     <selectable-course-list
     :courses="courses"
     :selectedCourses="selectedCourses"
