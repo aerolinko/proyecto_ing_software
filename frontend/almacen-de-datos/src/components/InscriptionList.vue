@@ -3,7 +3,7 @@
     <h2>Tus Inscripciones</h2>
     <ul>
         <li v-for="inscription in inscriptions" :key="inscription.inscription_id">
-        id -> {{inscription.inscription_id}} - {{ inscription.course_id }} - {{ inscription.userId }} - {{ inscription.course_name }}
+        Estás inscrito en el curso: {{ inscription.course_name }}
         </li>
     </ul>
     </div>
@@ -17,7 +17,7 @@ export default {
         type: Array,
         required: true
     }
-    }
+  }
 };
 </script>
 
