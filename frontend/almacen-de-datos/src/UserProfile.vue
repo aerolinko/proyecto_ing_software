@@ -4,6 +4,7 @@
     <div id="app">
     <b-card no-body>
       <b-tabs pills card>
+      <b-tab title="Perfil"><profile :user="user" /></b-tab>
       <b-tab title="Crear Curso"><create-course @courseCreated="fetchCourses"></create-course></b-tab>
       <b-tab title="Cursos"><course-list :courses="courses"></course-list></b-tab>
       <b-tab title="Crear Inscripción"><create-inscription @inscriptionCreated="fetchInscriptions"></create-inscription></b-tab>
@@ -19,7 +20,7 @@
 
 
 <script>
-
+import Profile from './components/Profile.vue';
 import CreateCourse from './components/CreateCourse.vue';
 import CreateInscription from './components/CreateInscription.vue';
 import CourseList from './components/CourseList.vue';
@@ -36,17 +37,18 @@ export default {
     name: 'App',
     components: {
     BCard, BTabs, BTab,
-     CreateCourse,
-     CreateInscription,
-     CourseList,
-     ProductList,
-     InscriptionList,
-     CreateProduct,
+    Profile,
+    CreateCourse,
+    CreateInscription,
+    CourseList,
+    ProductList,
+    InscriptionList,
+    CreateProduct,
     },
   data() {
     return {
       activeTab: 0,
-      user: null,
+      user: JSON.parse(sessionStorage.getItem('user')),
       courses: [],
       inscriptions: [],
       products: []

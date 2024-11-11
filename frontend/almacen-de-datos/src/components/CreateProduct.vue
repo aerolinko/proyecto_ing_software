@@ -9,7 +9,7 @@
         <label for="description">Descripcion del producto:</label>
         <textarea v-model="product.product_description" id="description" rows="6" cols="42" maxlength="255" required></textarea>
     </div>
-    <button type="submit">Crear Producto</button>
+    <button type="submit" :disabled="!isFormValid">Crear Producto</button>
     </form>
 </template>
 
@@ -26,6 +26,11 @@ export default {
         authorId: JSON.parse(sessionStorage.getItem('user')).id
         }
     };
+    },
+    computed:{
+        isFormValid(){
+            return this.selectedProducts === 1
+        }
     },
     methods: {
     resetForm() {

@@ -4,7 +4,7 @@
     :courses="courses"
     :selectedCourses="selectedCourses"
     @update:selectedCourses="selectedCourses = $event"/>
-    <button type="submit">Crear Insripcion</button>
+    <button type="submit" :disabled="!isFormValid ">Crear Insripcion</button>
     </form>
 </template>
 
@@ -29,6 +29,11 @@ export default {
                 userId: JSON.parse(sessionStorage.getItem('user')).id,
               },
     };
+    },
+    computed: {
+      isFormValid() {
+        return this.selectedCourses.length === 1;
+      }
     },
     methods: {
     resetForm() {
