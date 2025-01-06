@@ -1,0 +1,204 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+
+.login{
+    display: flex;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login img{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+.register-container{
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    display: flex;
+}
+
+.register{
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    display: block;
+    margin: 5px !important;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+li {
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    width: 35%;
+    margin: 10px 15px auto 5px;
+    text-align: center;
+    display: flex;
+    flex: auto;
+    flex-flow: column;
+    align-items: center;
+}
+
+ul {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.dias-disp {
+    padding: 0px;
+}
+
+button {
+    padding: 10px 50px;
+    background-color: #42b983;
+    color: white;
+    border: none;
+    border-radius: 50px !important;
+    cursor: pointer;
+}
+
+li .nav-link {
+    background-color: #DAD5E2;
+    color: black !important;
+    border: none;
+    border-radius: 10px !important;
+    cursor: pointer;
+}
+
+.nav-item {
+    padding: 0px;
+    border: 0px solid #ccc;
+    border-radius: 50px;
+    margin: 5px;
+    width: auto;
+    text-align: center;
+}
+
+.card-header-tabs .nav-link.active {
+    background-color: #42b983 !important;
+}
+
+
+
+h2 {
+    color: #000000;
+    text-align: center;
+}
+
+
+a {
+    color: #000000;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #369f6e;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: default;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app {
+    margin-bottom: 20px;
+}
+
+div label {
+    display: flex;
+    margin: 10px;
+}
+
+form button {
+    position: relative;
+}
+
+textarea {
+    resize: none !important;
+    display: flex;
+}
+
+.schedule {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+}
+
+#weekdays {
+    display: flex;
+}
+
+#all-days {
+    display: flex;
+}
+
+#days-label {
+    font-size: calc(1.3rem + 0.3vw);
+}
+
+#titulo{
+    text-align: center;
+    margin : 10px;
+    margin-bottom: 20px;
+}
+
+#cursos{
+    text-align: center;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+    gap: 30px; /* Espacio entre columnas */
+}
+
+.column-1, .column-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre elementos dentro de cada columna */
+    align-items: center;
+}
+
+button[type="submit"] {
+    grid-column: span 2; /* El botón se extiende en ambas columnas */
+    justify-self: center; /* Centra el botón en el área de grid */
+    margin: 40px;
+}
+
+#nulo{
+    border: 0px solid #ccc;
+    margin: -45px;
+}
+
+#dias-container{
+    display: flex;
+}
