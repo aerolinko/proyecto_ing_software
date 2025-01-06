@@ -46,4 +46,13 @@ public class InscriptionService {
             return false;
         }
     }
+
+    public Boolean deleteAllUserInscriptions(Long id){
+        try{
+            inscriptionRepository.deleteAllByUserId(id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }

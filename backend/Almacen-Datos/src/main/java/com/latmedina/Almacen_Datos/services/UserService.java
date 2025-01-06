@@ -35,6 +35,8 @@ public class UserService {
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
         user.setEmail(request.getEmail());
+        user.setPassword(request.getPassword());
+        user.setUsername(request.getUsername());
         return userRepository.save(user); // Save the updated user
     }
 
@@ -46,4 +48,5 @@ public class UserService {
             return false;
         }
     }
+
 }

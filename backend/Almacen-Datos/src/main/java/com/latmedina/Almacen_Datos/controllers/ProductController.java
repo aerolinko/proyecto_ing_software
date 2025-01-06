@@ -48,4 +48,15 @@ public class ProductController {
             return "Product with id " + id + " not deleted Product";
         }
     }
+
+    @DeleteMapping(path = "/all/{id}")
+    public String deleteAllProductByAuthorId(@PathVariable("id") Long id) {
+        boolean ok = this.productService.deleteUserProducts(id);
+        if (ok) {
+            return "Products with AuthorId " + id + "deleted";
+        } else {
+            return "Product with AuthorId " + id + " not deleted";
+        }
+    }
+
 }

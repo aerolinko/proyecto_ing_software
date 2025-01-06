@@ -25,6 +25,7 @@ public class CourseController {
     }
 
     @GetMapping(path = "/{id}")
+
     public Optional<CourseModel> getCourseById(@PathVariable("id") Long id) {
         return this.courseService.getById(id);
     }
@@ -43,9 +44,19 @@ public class CourseController {
     public String deleteCourseById(@PathVariable("id") Long id) {
         boolean ok = this.courseService.deleteCourse(id);
         if (ok) {
-            return "User with id " + id + "deleted User";
+            return "Course with id " + id + "deleted Course";
         } else {
-            return "User with id " + id + " not deleted User";
+            return "Course with id " + id + " not deleted Course";
+        }
+    }
+
+    @DeleteMapping(path = "/all/{id}")
+    public String deleteAllCourseByAuthorId(@PathVariable("id") Long id) {
+        boolean ok = this.courseService.deleteAllCoursesByAuthorId(id);
+        if (ok) {
+            return "Courses with AuthorId " + id + "deleted";
+        } else {
+            return "Courses with AuthorId " + id + " not deleted";
         }
     }
 }
