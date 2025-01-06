@@ -47,4 +47,13 @@ public class ProductService {
             return false;
         }
     }
+
+    public Boolean deleteUserProducts(Long id){
+        try{
+            productRepository.deleteAllByAuthorId(id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }

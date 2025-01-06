@@ -47,4 +47,14 @@ public class CourseService {
             return false;
         }
     }
+
+    public Boolean deleteAllCoursesByAuthorId(Long id){
+        try{
+            courseRepository.deleteAllByAuthorId(id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }

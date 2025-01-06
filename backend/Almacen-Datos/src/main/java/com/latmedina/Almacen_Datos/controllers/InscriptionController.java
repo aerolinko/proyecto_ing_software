@@ -48,4 +48,15 @@ public class InscriptionController {
             return "Inscription with id " + id + " not deleted Inscription";
         }
     }
+
+    @DeleteMapping(path = "/all/{id}")
+    public String deleteAllInscriptionsByUserId(@PathVariable("id") Long id) {
+        boolean ok = this.inscriptionService.deleteAllUserInscriptions(id);
+        if (ok) {
+            return "Inscriptions with UserId " + id + "deleted";
+        } else {
+            return "Inscriptions with UserId " + id + " not deleted";
+        }
+    }
+
 }
