@@ -25,6 +25,10 @@ public class CourseService {
         return courseRepository.findAllByAuthorId(author_id);
     }
 
+    public ArrayList<CourseModel> getCoursesByIsNotAuthorId(Long author_id){
+        return courseRepository.findAllByAuthorIdIsNot(author_id);
+    }
+
 
     public Optional<CourseModel> getById(Long id){
         return courseRepository.findById(id);

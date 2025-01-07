@@ -35,6 +35,12 @@ public class CourseController {
         return this.courseService.getByAuthorId(author_id);
     }
 
+    @GetMapping(path = "/not/author/{author_id}")
+    public ArrayList<CourseModel> getCoursesByNotAuthorId(@PathVariable("author_id") Long author_id){
+        return this.courseService.getCoursesByIsNotAuthorId(author_id);
+    }
+
+
     @PutMapping(path = "/{id}")
     public CourseModel updateCourseById(@RequestBody CourseModel request, @PathVariable("id") Long id) {
         return this.courseService.updateById(request, id);
