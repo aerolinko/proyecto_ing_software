@@ -6,7 +6,7 @@
                 {{ course.course_name }}
             </option>
         </select>
-        <button @click="deleteCourse" :disabled="!selectedCourseId">Eliminar Curso</button>
+        <button id="delete-course-products-inscriptions-users" class="btn btn-danger" @click="deleteCourse" :disabled="!selectedCourseId">Eliminar Curso</button>
     </div>
 </template>
 

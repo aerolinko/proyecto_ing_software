@@ -6,7 +6,7 @@
         {{ user.username }}
       </option>
     </select>
-    <button @click="deleteUser" :disabled="!selectedUserId">Eliminar Usuario</button>
+    <button id="delete-course-products-inscriptions-users" class="btn btn-danger" @click="deleteUser" :disabled="!selectedUserId">Eliminar Usuario</button>
   </div>
 </template>
 

@@ -1,6 +1,5 @@
 <template>
-    <div class="form-container">
-        <form @submit.prevent="handleSubmit" class="form-grid">
+        <form @submit.prevent="handleSubmit" >
             <div>
                 <label for="select-course">Seleccionar curso:</label>
                 <select v-model="selectedCourseId" id="select-course" @change="loadCourse">
@@ -10,7 +9,8 @@
                 </select>
             </div>
 
-            <div v-if="course">
+            <div v-if="course" class="form-grid">
+                <div id="column-1">
                 <div>
                     <label for="course-name">Nombre del curso:</label>
                     <input type="text" v-model="course.course_name" id="º-name" maxlength="25" required>
@@ -20,7 +20,8 @@
                     <textarea v-model="course.course_description" rows="6" cols="42" maxlength="255" id="description"
                         required></textarea>
                 </div>
-
+                </div>
+                <div id="column-2">
                 <div v-for="(time_range, index) in course.time_ranges" :key="index">
                     <h3 class="schedule">Horario</h3>
                     <div class="schedule">
@@ -32,18 +33,17 @@
                         <input type="time" v-model="time_range.end_time" required>
                     </div>
                     <label>Días de la semana:</label>
-                    <div>
+                    <div id="all-days">
                         <div v-for="day in daysOfWeek" :key="day">
                             <input type="checkbox" :value="day" v-model="time_range.days">
                             <label>{{ day }}</label>
                         </div>
                     </div>
                 </div>
-
+            </div>
                 <button type="submit">Guardar Cambios</button>
             </div>
         </form>
-    </div>
 </template>
 
 <script>

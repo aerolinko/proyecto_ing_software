@@ -10,9 +10,9 @@
             <li v-for="(time_range) in course.time_ranges" id="nulo">
                 Inicio: {{ time_range.start_time }}
                 Fin: {{ time_range.end_time }}
-                        <ul>
-                            <li v-for="(day) in time_range.days"> {{ day }}</li>
-                        </ul>
+                        <div id="all-days">
+                            <li id="clasas" v-for="(day) in time_range.days"> {{ day }}</li>
+                        </div>
                     </li>
                 </ul>
         </li>

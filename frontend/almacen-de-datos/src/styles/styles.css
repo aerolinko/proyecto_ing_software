@@ -161,6 +161,25 @@ textarea {
     display: flex;
 }
 
+#inscripciones{
+    display: flex;
+
+}
+#clasas2{
+    padding: 10px;
+    border: 1px solid #00000036;
+    border-radius: 5px;
+    margin: 10px;
+    width: 35%;
+}
+
+#clasas{
+    padding: 10px;
+    border-radius: 25px;
+    margin: 10px;
+    width: 35%;
+}
+
 #days-label {
     font-size: calc(1.3rem + 0.3vw);
 }
@@ -193,9 +212,6 @@ button[type="submit"] {
     margin: -45px;
 }
 
-#dias-container{
-    display: flex;
-}
 
 .header{
     display: flex;
@@ -213,3 +229,9 @@ button[type="submit"] {
 padding: 8px 16px;
 margin-right: 45px;
 }
+
+#delete-course-products-inscriptions-users{
+    margin-left: 200px;
+}
+
+

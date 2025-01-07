@@ -3,34 +3,34 @@
     <form @submit.prevent="handleSubmit" class="form-grid">
       <div>
         <label for="select-user">Seleccionar Usuario:</label>
-        <select v-model="selectedUserId" id="select-user" @change="loadUsers" >
+        <select v-model="selectedUserId" id="select-user" @change="loadUsers">
           <option v-for="user in users" :key="user.id" :value="user.id">
-            {{ user.username+'-- id: '+user.id }}
+            {{ user.username + '-- id: ' + user.id }}
           </option>
         </select>
       </div>
 
       <div v-if="user">
-             <div>
-               <label for="firstname">Nombre</label>
-               <input type="text" v-model="user.firstName" id="firstName" required>
-             </div>
-             <div>
-               <label for="lastname">Apellido</label>
-               <input type="text" v-model="user.lastName" id="lastName" required>
-             </div>
-             <div>
-               <label for="email">Email</label>
-               <input type="email" v-model="user.email" id="email" required>
-             </div>
-             <div>
-               <label for="email">Usuario</label>
-               <input type="text" v-model="user.username" id="username" required>
-             </div>
-             <div>
-               <label for="email">Contraseña</label>
-               <input type="password" v-model="user.password" id="password" required>
-             </div>
+        <div>
+          <label for="firstname">Nombre</label>
+          <input type="text" v-model="user.firstName" id="firstName" required>
+        </div>
+        <div>
+          <label for="lastname">Apellido</label>
+          <input type="text" v-model="user.lastName" id="lastName" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" v-model="user.email" id="email" required>
+        </div>
+        <div>
+          <label for="email">Usuario</label>
+          <input type="text" v-model="user.username" id="username" required>
+        </div>
+        <div>
+          <label for="email">Contraseña</label>
+          <input type="password" v-model="user.password" id="password" required>
+        </div>
         <button type="submit">Guardar Cambios</button>
       </div>
     </form>
@@ -55,8 +55,8 @@ export default {
     };
   },
   methods: {
-    reset(){
-      this.selectedUserId=null;
+    reset() {
+      this.selectedUserId = null;
       this.user = null;
     },
     loadUsers() {
