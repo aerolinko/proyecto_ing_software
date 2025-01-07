@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import CourseService from "@/services/CourseService.js";
+
 export default {
     name: 'CourseList',
     props: {
@@ -43,7 +45,7 @@ export default {
     : [...this.selectedCourses, courseId];
 
     this.$emit('update:selected-courses', newSelectedCourses); // Emit the updated array
-    }
+    },
   }
 };
 </script>
