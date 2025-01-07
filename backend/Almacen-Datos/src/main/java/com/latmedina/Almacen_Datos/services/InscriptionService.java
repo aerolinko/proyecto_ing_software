@@ -35,6 +35,7 @@ public class InscriptionService {
         inscription.setCourse_id(request.getCourse_id());
         inscription.setInscription_id(request.getInscription_id());
         inscription.setUserId(request.getUserId());
+        inscription.setCourse_name(request.getCourse_name());
         return inscriptionRepository.save(inscription); // Save the updated user
     }
 

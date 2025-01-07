@@ -27,6 +27,13 @@
           </b-tab>
           <b-tab title="Inscripciones">
             <inscription-list :inscriptions="inscriptions"></inscription-list>
+            <b-tabs lazy pills card>
+              <b-tab title="Editar Inscripción">
+                <edit-inscription :inscriptions="inscriptions" @inscriptionEdited="fetchInscriptions"></edit-inscription>              </b-tab>
+              <b-tab lazy title="Eliminar Inscripción">
+                <delete-inscription :inscriptions="inscriptions" @inscriptionDeleted="fetchInscriptions"></delete-inscription>
+              </b-tab>
+            </b-tabs>
           </b-tab>
           <b-tab title="Crear Productos">
             <create-product @productCreated="fetchProducts"></create-product>
@@ -78,10 +85,14 @@ import DeleteProduct from "@/components/DeleteProduct.vue";
 import UserService from "@/services/UserService.js";
 import DeleteUser from "@/components/DeleteUser.vue";
 import EditUser from "@/components/EditUser.vue";
+import DeleteInscription from "@/components/DeleteInscription.vue";
+import EditInscription from "@/components/EditInscription.vue";
 
 export default {
   name: 'App',
   components: {
+    EditInscription,
+    DeleteInscription,
     EditUser,
     DeleteUser,
     DeleteProduct,
