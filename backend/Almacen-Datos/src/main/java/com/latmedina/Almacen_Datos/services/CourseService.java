@@ -40,6 +40,7 @@ public class CourseService {
         course.setCourse_id(request.getCourse_id());
         course.setCourse_name(request.getCourse_name());
         course.setCourse_description(request.getCourse_description());
+        course.setTime_ranges(request.getTime_ranges());
         return courseRepository.save(course); // Save the updated user
     }
 
