@@ -165,12 +165,6 @@ textarea {
     font-size: calc(1.3rem + 0.3vw);
 }
 
-#titulo{
-    text-align: center;
-    margin : 10px;
-    margin-bottom: 20px;
-}
-
 #cursos{
     text-align: center;
 }
@@ -201,4 +195,21 @@ button[type="submit"] {
 
 #dias-container{
     display: flex;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#titulo{
+    margin : 20px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+
+#Salir{
+padding: 8px 16px;
+margin-right: 45px;
 }

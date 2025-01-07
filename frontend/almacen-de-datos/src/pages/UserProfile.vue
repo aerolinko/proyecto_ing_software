@@ -1,6 +1,9 @@
 <template>
   <div v-if="user">
+    <div class="header">
     <h1 id="titulo"> BIENVENIDO {{ user.firstName.toUpperCase() }}!</h1>
+    <button id="Salir" @click="logout" class="btn btn-danger">Salir</button>
+    </div>
     <div id="app">
       <b-card no-body>
         <b-tabs lazy pills card>
@@ -124,6 +127,12 @@ export default {
     this.user = JSON.parse(sessionStorage.getItem('user'));
   },
   methods: {
+    async logout() {
+    // Limpiar los datos del usuario almacenados en sessionStorage
+    sessionStorage.removeItem('user');
+    // Redirigir al login
+    window.location.href = '/login.html'; // Asegúrate de que tu router esté configurado para usar esta ruta
+    },
     async fetchUsers() {
       try {
         const response = await UserService.getUsers();
