@@ -1,7 +1,6 @@
 package com.latmedina.Almacen_Datos.models;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.CollectionId;
 
 @Entity
 @Table(name = "personas")

@@ -2,14 +2,9 @@ package com.latmedina.Almacen_Datos.controllers;
 
 import com.latmedina.Almacen_Datos.models.UserModel;
 import com.latmedina.Almacen_Datos.services.UserService;
-import org.antlr.v4.runtime.Token;
-import org.hibernate.boot.model.CustomSql;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.oauth2.server.servlet.OAuth2AuthorizationServerJwtAutoConfiguration;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Optional;
 
