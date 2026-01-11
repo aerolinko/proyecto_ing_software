@@ -13,7 +13,6 @@
     "e2e": "playwright test"
   },
   "dependencies": {
-    "almacen-de-datos": "file:",
     "axios": "^1.7.7",
     "bootstrap-vue": "^2.23.1",
     "bootstrap-vue-3": "^0.3.12",
